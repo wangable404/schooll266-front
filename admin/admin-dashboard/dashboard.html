@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../global.css" />
+  </head>
+
+  <body>
+    <div class="loader-container hidden" id="loaderContainer">
+      <div class="loader-content">
+        <div class="loader-icon"></div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="loader">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="status" id="status">Ishga tayyor</div>
+      </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="admin-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Maktab Admin</h3>
+        </div>
+        <div class="sidebar-menu">
+          <div class="menu-item">
+            <a
+              href="../admin-dashboard/dashboard.html"
+              class="menu-link active"
+            >
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-achievments/admin.html" class="menu-link">
+              <i class="fas fa-trophy"></i>
+              <span>Yutuqlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-parental/admin.html" class="menu-link">
+              <i class="fas fa-users"></i>
+              <span>Ota-ona</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-events/admin.html" class="menu-link">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Tadbirlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-clubs/admin.html" class="menu-link">
+              <i class="fas fa-users"></i>
+              <span>To'garaklar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-gallery/admin.html" class="menu-link">
+              <i class="fas fa-images"></i>
+              <span>Foto Galereya</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="header">
+          <h1>Dashboard</h1>
+          <div class="user-info">
+            <img
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt="Admin"
+            />
+            <span>Admin</span>
+          </div>
+        </div>
+        <div class="stats-grid fade-in">
+          <div class="stat-card students">
+            <div class="stat-header">
+              <div>
+                <p class="stat-title">O'quvchilar</p>
+                <h3 class="stat-value">1,245</h3>
+                <p class="stat-change positive">
+                  <i class="fas fa-arrow-up"></i> 5.2% o'tgan oydan
+                </p>
+              </div>
+              <div class="stat-icon students">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card teachers">
+            <div class="stat-header">
+              <div>
+                <p class="stat-title">O'qituvchilar</p>
+                <h3 class="stat-value">68</h3>
+                <p class="stat-change positive">
+                  <i class="fas fa-arrow-up"></i> 2.3% o'tgan oydan
+                </p>
+              </div>
+              <div class="stat-icon teachers">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card events">
+            <div class="stat-header">
+              <div>
+                <p class="stat-title">Tadbirlar</p>
+                <h3 class="stat-value">24</h3>
+                <p class="stat-change negative">
+                  <i class="fas fa-arrow-down"></i> 1.5% o'tgan oydan
+                </p>
+              </div>
+              <div class="stat-icon events">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card achievements">
+            <div class="stat-header">
+              <div>
+                <p class="stat-title">Yutuqlar</p>
+                <h3 class="stat-value">156</h3>
+                <p class="stat-change positive">
+                  <i class="fas fa-arrow-up"></i> 12.7% o'tgan oydan
+                </p>
+              </div>
+              <div class="stat-icon achievements">
+                <i class="fas fa-trophy"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="dashboard-grid"
+          style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem"
+        >
+          <div class="dashboard-card fade-in">
+            <div class="dashboard-card-header">
+              <h2>So'nggi Faoliyat</h2>
+              <button class="btn btn-primary">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+            </div>
+            <ul class="activity-list">
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="activity-content">
+                  <h4 class="activity-title">
+                    Yangi o'quvchi qo'shildi - Alijonov Behruz
+                  </h4>
+                  <p class="activity-time">10 daqiqa oldin</p>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="activity-content">
+                  <h4 class="activity-title">
+                    Yangi yutuq qo'shildi - Respublika chempionati
+                  </h4>
+                  <p class="activity-time">1 soat oldin</p>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="activity-content">
+                  <h4 class="activity-title">
+                    Yangi tadbir qo'shildi - "Besh tashabbus" festivali
+                  </h4>
+                  <p class="activity-time">3 soat oldin</p>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="activity-content">
+                  <h4 class="activity-title">
+                    Yangi o'qituvchi qo'shildi - Qodirova Dilfuza
+                  </h4>
+                  <p class="activity-time">5 soat oldin</p>
+                </div>
+              </li>
+              <li class="activity-item">
+                <div class="activity-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div class="activity-content">
+                  <h4 class="activity-title">Yangi dars jadvali qo'shildi</h4>
+                  <p class="activity-time">1 kun oldin</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dashboard-card fade-in">
+            <div class="dashboard-card-header">
+              <h2>Kalendar</h2>
+              <button class="btn btn-primary">
+                <i class="fas fa-ellipsis-h"></i>
+              </button>
+            </div>
+            <div style="padding: 0.5rem">
+              <table class="calendar">
+                <thead>
+                  <tr>
+                    <th>Du</th>
+                    <th>Se</th>
+                    <th>Ch</th>
+                    <th>Pa</th>
+                    <th>Ju</th>
+                    <th>Sh</th>
+                    <th>Ya</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <div class="calendar-day">1</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">2</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="calendar-day">3</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">4</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">5</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">6</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">7</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">8</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">9</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="calendar-day">10</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">11</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day event">12</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">13</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">14</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">15</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">16</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="calendar-day">17</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">18</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day event">19</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">20</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day today">21</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">22</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">23</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="calendar-day">24</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day event">25</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">26</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">27</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">28</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">29</div>
+                    </td>
+                    <td>
+                      <div class="calendar-day">30</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="calendar-day">31</div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding: 1rem; border-top: 1px solid #f1f5f9">
+              <h3 style="font-size: 1rem; margin-bottom: 0.75rem">
+                Yaqinlashayotgan tadbirlar
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                <div
+                  style="
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: var(--success-color);
+                    margin-right: 0.75rem;
+                  "
+                ></div>
+                <div>
+                  <p style="font-size: 0.9rem; font-weight: 500">
+                    "Besh tashabbus" festivali
+                  </p>
+                  <p style="font-size: 0.8rem; color: #64748b">
+                    25-iyul, 10:00
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center">
+                <div
+                  style="
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: var(--primary-color);
+                    margin-right: 0.75rem;
+                  "
+                ></div>
+                <div>
+                  <p style="font-size: 0.9rem; font-weight: 500">
+                    O'qituvchilar kuni
+                  </p>
+                  <p style="font-size: 0.8rem; color: #64748b">
+                    1-oktabr, 09:00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../global.js"></script>
+  <script src="./dashboard.js"></script>
+</html>

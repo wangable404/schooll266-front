@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../global.css" />
+  </head>
+
+  <body>
+    <div class="loader-container hidden" id="loaderContainer">
+      <div class="loader-content">
+        <div class="loader-icon"></div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="loader">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="status" id="status">Ishga tayyor</div>
+      </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="admin-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Maktab Admin</h3>
+        </div>
+        <div class="sidebar-menu">
+          <div class="menu-item">
+            <a href="../admin-dashboard/dashboard.html" class="menu-link">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-achievments/admin.html" class="menu-link">
+              <i class="fas fa-trophy"></i>
+              <span>Yutuqlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-parental/admin.html" class="menu-link">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <span>Ota-ona</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-events/admin.html" class="menu-link active">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Tadbirlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-clubs/admin.html" class="menu-link">
+              <i class="fas fa-users"></i>
+              <span>To'garaklar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-gallery/admin.html" class="menu-link">
+              <i class="fas fa-images"></i>
+              <span>Foto Galereya</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="header">
+          <h1>Tadbirlar Boshqaruvi</h1>
+          <div class="user-info">
+            <img
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt="Admin"
+            />
+            <span>Admin</span>
+          </div>
+        </div>
+
+        <div class="admin-card fade-in">
+          <div class="admin-card-header">
+            <h2>Mavjud Tadbirlar</h2>
+            <button class="btn btn-primary" id="addEventBtn">
+              <i class="fas fa-plus"></i> Yangi Tadbir Qo'shish
+            </button>
+          </div>
+          <div class="events-grid"></div>
+        </div>
+      </main>
+    </div>
+    <div class="modal" id="eventModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Yangi Tadbir Qo'shish</h3>
+          <button class="modal-close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="eventForm">
+            <input type="hidden" id="eventsHidden" />
+            <div class="form-group">
+              <label for="eventTitle">Tadbir nomi</label>
+              <input
+                type="text"
+                id="eventTitle"
+                class="form-control"
+                placeholder="Bitiruvchilar marosimi"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="eventDescription">Tadbir haqida</label>
+              <textarea
+                id="eventDescription"
+                class="form-control"
+                rows="3"
+                placeholder="9-sinf bitiruvchilarini tantanali marosim"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group date-time-container">
+              <div>
+                <label for="eventDay">Kun</label>
+                <input
+                  type="number"
+                  id="eventDay"
+                  class="form-control"
+                  placeholder="15"
+                  min="1"
+                  max="31"
+                  required
+                />
+              </div>
+              <div>
+                <label for="eventMonth">Oy</label>
+                <select id="eventMonth" class="form-control" required>
+                  <option value="">Tanlang</option>
+                  <option value="Yanvar">Yanvar</option>
+                  <option value="Fevral">Fevral</option>
+                  <option value="Mart">Mart</option>
+                  <option value="Aprel">Aprel</option>
+                  <option value="May">May</option>
+                  <option value="Iyun">Iyun</option>
+                  <option value="Iyul">Iyul</option>
+                  <option value="Avgust">Avgust</option>
+                  <option value="Sentabr">Sentabr</option>
+                  <option value="Oktabr">Oktabr</option>
+                  <option value="Noyabr">Noyabr</option>
+                  <option value="Dekabr">Dekabr</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group date-time-container">
+              <div>
+                <label for="eventStartTime">Boshlanish vaqti</label>
+                <input
+                  type="time"
+                  id="eventStartTime"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div>
+                <label for="eventEndTime">Tugash vaqti</label>
+                <input
+                  type="time"
+                  id="eventEndTime"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" id="cancelBtn">Bekor qilish</button>
+          <button class="btn btn-primary" id="saveBtn">Saqlash</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../global.js"></script>
+  <script src="./admin.js"></script>
+</html>

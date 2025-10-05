@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../global.css" />
+  </head>
+  <body>
+        <div class="loader-container hidden" id="loaderContainer">
+      <div class="loader-content">
+        <div class="loader-icon"></div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="loader">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="status" id="status">Ishga tayyor</div>
+      </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="admin-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Maktab Admin</h3>
+        </div>
+        <div class="sidebar-menu">
+          <div class="menu-item">
+            <a href="../admin-dashboard/dashboard.html" class="menu-link">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-achievments/admin.html" class="menu-link">
+              <i class="fas fa-trophy"></i>
+              <span>Yutuqlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-parental/admin.html" class="menu-link active">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <span>Ota-ona</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-events/admin.html" class="menu-link">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Tadbirlar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-clubs/admin.html" class="menu-link">
+              <i class="fas fa-users"></i>
+              <span>To'garaklar</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="../admin-gallery/admin.html" class="menu-link">
+              <i class="fas fa-images"></i>
+              <span>Foto Galereya</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="header">
+          <h1>Ota-onalar Boshqaruvi</h1>
+          <div class="user-info">
+            <img
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt="Admin"
+            />
+            <span>Admin</span>
+          </div>
+        </div>
+        <div class="admin-card fade-in">
+          <div class="admin-card-header">
+            <h2>Mavjud Ota-onalar</h2>
+            <button class="btn btn-primary" id="addParentBtn">
+              <i class="fas fa-plus"></i> Yangi Ota-ona Qo'shish
+            </button>
+          </div>
+          <div class="parents-container" id="parentsContainer">
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="modal" id="parentModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Yangi Ota-ona Qo'shish</h3>
+          <button class="modal-close" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="parentForm">
+            <input type="hidden" id="parentsHidden" />
+            <div class="form-group">
+              <label for="parentIcon">Belgi (Emoji)</label>
+              <input
+                type="text"
+                id="parentIcon"
+                class="form-control"
+                placeholder="👨‍👩‍👧‍👦"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="parentName">Ota-ona Ismi</label>
+              <input
+                type="text"
+                id="parentName"
+                class="form-control"
+                placeholder="Ali Valiyev"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="parentPhone">Telefon Raqami</label>
+              <input
+                type="text"
+                id="parentPhone"
+                class="form-control"
+                placeholder="+998901234567"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="parentChild">Farzand Ismi</label>
+              <input
+                type="text"
+                id="parentChild"
+                class="form-control"
+                placeholder="Hasan Aliyev"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="parentClass">Farzand Sinfi</label>
+              <input
+                type="text"
+                id="parentClass"
+                class="form-control"
+                placeholder="5-A"
+                required
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" id="cancelBtn">Bekor qilish</button>
+          <button class="btn btn-primary" id="saveBtn">Saqlash</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../global.js"></script>
+  <script src="./admin.js"></script>
+</html>
