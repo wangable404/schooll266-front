@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const galleryGrid = document.querySelector(".gallery-grid");
 
   axios
-    .get("http://localhost:4000/api/v1/achivments")
+    .get("https://schooll266-bek.onrender.com/api/v1/achivments")
     .then((res) => {
       const achievements = res.data;
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(err);
     });
   axios
-    .get("http://localhost:4000/api/v1/parents")
+    .get("https://schooll266-bek.onrender.com/api/v1/parents")
     .then((res) => {
       const parentals = res.data;
 
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(err);
     });
   axios
-    .get("http://localhost:4000/api/v1/events")
+    .get("https://schooll266-bek.onrender.com/api/v1/events")
     .then((res) => {
       const events = res.data; // если сервер возвращает массив событий
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Xatolik yuz berdi:", err);
     });
   axios
-    .get("http://localhost:4000/api/v1/clubs")
+    .get("https://schooll266-bek.onrender.com/api/v1/clubs")
     .then((res) => {
       const clubs = res.data;
 
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Xatolik yuz berdi:", err);
     });
   axios
-    .get("http://localhost:4000/api/v1/gallery")
+    .get("https://schooll266-bek.onrender.com/api/v1/gallery")
     .then((res) => {
       const gallery = res.data; // если приходит массив изображений
 

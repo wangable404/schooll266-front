@@ -1,4 +1,4 @@
-const bek_url = "http://localhost:4000/api/v1";
+const bek_url = "https://schooll266-bek.onrender.com/api/v1";
 const modal = document.getElementById("photoModal");
 const addBtn = document.getElementById("addPhotoBtn");
 const closeBtn = document.getElementById("closeModal");
