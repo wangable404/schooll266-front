@@ -78,6 +78,5 @@ class RequestLoader {
   }
 }
 
-// Create global instance
 const loader = new RequestLoader();
 

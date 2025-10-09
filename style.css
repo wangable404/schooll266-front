@@ -445,6 +445,8 @@ footer {
     font-size: 1.1rem;
     transition: all 0.3s;
     text-decoration: none;
+    margin-right: 250px;
+    margin-top: 15px;
 }
 
 .social-links a:hover {
